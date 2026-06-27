@@ -97,10 +97,15 @@ export function FooterSection() {
       {/* Panoramic banner image */}
       <div className="relative w-full h-[340px] md:h-[420px] overflow-hidden">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2810%29-UnDKstODkIENp5xqTYUEpt0Sm8tNOw.png"
+          src="images/terrain2.png"
           alt="Bioluminescent landscape"
           className="w-full h-full object-cover object-center"
         />
+        {/*  <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2810%29-UnDKstODkIENp5xqTYUEpt0Sm8tNOw.png"
+          alt="Bioluminescent landscape"
+          className="w-full h-full object-cover object-center"
+        /> */}
         {/* Gradient fade to black at bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
         {/* Subtle dark vignette on sides */}
@@ -115,7 +120,7 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display text-white">COMPUTE</span>
+                <span className="text-2xl font-display text-white">ORIZON</span>
                 <span className="text-xs text-white/40 font-mono">TM</span>
               </a>
 
@@ -167,7 +172,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/30">
-            &copy; 2025 COMPUTE. All rights reserved.
+            &copy; 2025 ORIZON. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-white/30">

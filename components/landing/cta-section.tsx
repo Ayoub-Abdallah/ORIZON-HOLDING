@@ -57,7 +57,7 @@ export function CtaSection() {
                 </h2>
 
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                  Join teams automating complex workflows with COMPUTE agents. 
+                  Join teams automating complex workflows with ORIZON agents. 
                   Deploy your first agent in minutes.
                 </p>
 
@@ -79,14 +79,14 @@ export function CtaSection() {
                 </div>
 
                 <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  1,000 free tasks with COMPUTE
+                  1,000 free tasks with ORIZON
                 </p>
               </div>
 
               {/* Right image */}
               <div className="hidden lg:flex items-end justify-center w-[600px] h-[650px] -mr-16">
                 <img
-                  src="/images/bridge.png"
+                  src="/images/bridge2.png"
                   alt="Two trees connected by glowing arcs"
                   className="w-full h-full object-contain object-bottom"
                 />

@@ -52,8 +52,13 @@ export function InfrastructureSection() {
             <div className={`w-48 lg:w-72 xl:w-80 shrink-0 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
-              <img
+              {/* <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/world-3i68QNWJwmO7W19ztZWbevAwJQHzYL.png"
+                alt="Global network sphere"
+                className="w-full h-full object-contain object-center"
+              /> */}
+                  <img
+                src="images/globe2.png"
                 alt="Global network sphere"
                 className="w-full h-full object-contain object-center"
               />
@@ -148,7 +153,7 @@ export function InfrastructureSection() {
                 <span className="text-2xl text-muted-foreground">regions</span>
               </div>
               <p className="text-muted-foreground max-w-md">
-                Compute nodes distributed globally for maximum redundancy and minimum latency.
+                ORIZON nodes distributed globally for maximum redundancy and minimum latency.
               </p>
             </div>
           </div>

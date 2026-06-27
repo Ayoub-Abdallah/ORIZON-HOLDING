@@ -31,7 +31,7 @@ const steps = [
     number: "03",
     title: "Monitor",
     subtitle: "& scale",
-    description: "Track progress in real-time. Spin up more agents as needed. Pay only for compute used.",
+    description: "Track progress in real-time. Spin up more agents as needed. Pay only for ORIZON used.",
     code: `optimus.dashboard({
   agents: [researcher],
   metrics: ['tasks', 'latency', 'cost'],
@@ -98,8 +98,14 @@ export function HowItWorksSection() {
           <div className={`relative h-[320px] lg:h-[640px] overflow-hidden transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}>
-            <img
+            {/* <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree-uAia6REvB137CQyHFCf0za3O6h2zKO.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute bottom-0 left-0 w-full h-full object-contain object-bottom"
+            /> */}
+            <img
+              src="images/3.png"
               alt=""
               aria-hidden="true"
               className="absolute bottom-0 left-0 w-full h-full object-contain object-bottom"

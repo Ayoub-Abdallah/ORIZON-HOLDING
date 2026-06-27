@@ -12,7 +12,7 @@ const features = [
   {
     number: "02",
     title: "Distributed Computing",
-    description: "Offload compute-heavy tasks to our global network. Your agents run on optimized infrastructure across 50+ regions worldwide.",
+    description: "Offload ORIZON-heavy tasks to our global network. Your agents run on optimized infrastructure across 50+ regions worldwide.",
     stats: { value: "50+", label: "global regions" },
   },
   {
@@ -209,12 +209,19 @@ export function FeaturesSection() {
 
             {/* Right: mirrored image, full height */}
             <div className="hidden lg:block relative w-[42%] shrink-0 overflow-hidden">
-              <img
+              {/* <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2812%29-ng3RrNnsPMJ5CrtOjcPTmhHg01W11q.png"
                 alt=""
                 aria-hidden="true"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 style={{ transform: "scaleX(-1)" }}
+              /> */}
+              <img
+                src="images/2.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ transform: "scale(1)" }}
               />
               {/* Fade left edge into black */}
               <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent" />

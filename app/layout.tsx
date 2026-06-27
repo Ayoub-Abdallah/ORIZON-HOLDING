@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'COMPUTE - AI Agents for Distributed Computing',
-  description: 'Deploy autonomous AI agents on distributed infrastructure. Offload complex tasks to intelligent workers that run 24/7.',
-  generator: 'v0.app',
+  title: 'ORIZON - Engineering software, AI, and infrastructure as one.',
+  description: 'DEngineering software, AI, and infrastructure as one.',
+  generator: 'Eng. Ayoub Ben Chahla - ORIZON TM',
 }
 
 export default function RootLayout({

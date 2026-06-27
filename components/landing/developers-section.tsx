@@ -47,11 +47,17 @@ export function DevelopersSection() {
         }`}
       >
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2813%29-OQ2DiR3ElVsUg8kTvTL1kC5A3Q6maM.png"
+          src="images/stairs2.png"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover object-left-top"
         />
+        {/* <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upscaled%20Image%20%2813%29-OQ2DiR3ElVsUg8kTvTL1kC5A3Q6maM.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-left-top"
+        /> */}
         {/* Fade left edge */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
         {/* Fade top edge */}

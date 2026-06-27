@@ -8,25 +8,25 @@ const securityFeatures = [
     icon: Shield,
     title: "Isolated execution",
     description: "Each agent runs in its own secure sandbox.",
-    image: "/images/isolated.jpg",
+    image: "/images/shield2.png",
   },
   {
     icon: Lock,
     title: "Encrypted memory",
     description: "Data encrypted at rest and in transit.",
-    image: "/images/encrypted.jpg",
+    image: "/images/encrypted.png",
   },
   {
     icon: Eye,
     title: "Full audit trails",
     description: "Every action logged and inspectable.",
-    image: "/images/audit.jpg",
+    image: "/images/audit3.png",
   },
   {
     icon: FileCheck,
     title: "Permission boundaries",
     description: "Principle of least privilege by design.",
-    image: "/images/permissions.jpg",
+    image: "/images/permissions1.png",
   },
 ];
 

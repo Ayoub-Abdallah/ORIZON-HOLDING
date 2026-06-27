@@ -131,11 +131,17 @@ export function IntegrationsSection() {
         isVisible ? "opacity-100" : "opacity-0"
       }`}>
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/connection-KeJwWPQvn6l0a7C48tCARYtNEdC92H.png"
+          src="images/connection2.png"
           alt=""
           aria-hidden="true"
           className="w-full h-auto object-cover"
         />
+         {/* <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/connection-KeJwWPQvn6l0a7C48tCARYtNEdC92H.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-auto object-cover"
+        /> */}
       </div>
 
       {/* Integration grid — remonte sur l'image avec spacing mobile approprié */}
