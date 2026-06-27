@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const words = ["automate", "delegate", "execute", "scale"];
+const words = ["think", "design", "build", "deploy", "scale"];
 
 function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   const letters = word.split("");
@@ -62,7 +62,9 @@ function BlurWord({ word, trigger }: { word: string; trigger: number }) {
   }, [trigger]);
 
   // gradient colours cycling across letter positions
-  const gradientColors = ["#eca8d6", "#a78bfa", "#67e8f9", "#fbbf24", "#eca8d6"];
+  // const gradientColors = ["#eca8d6", "#a78bfa", "#67e8f9", "#fbbf24", "#eca8d6"];
+  const gradientColors = ["#f8b628ff", "#f5dc51ff", "#f5dc51ff", "#f5dc51ff", "#f5dc51ff"];
+
 
   return (
     <>
@@ -115,7 +117,7 @@ export function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -176,7 +178,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-white/60">
             <span className="w-8 h-px bg-white/30" />
-            Autonomous AI agents for distributed computing
+            Engineering software, AI, and infrastructure as one.
           </span>
         </div>
         
@@ -187,9 +189,9 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block whitespace-nowrap">Distributed compute,</span>
+            <span className="block whitespace-nowrap">Engineering tomorrow,</span>
             <span className="block whitespace-nowrap">
-              agents that{" "}
+              together we{" "}
               <span className="relative inline-block">
                 <BlurWord word={words[wordIndex]} trigger={wordIndex} />
               </span>
