@@ -4,6 +4,7 @@ import { principles } from "@/lib/content";
 import { ButtonLink, PageHero, Section, SectionHeader } from "@/components/ui";
 import { BriefBuilder } from "@/components/forms/brief-builder";
 import { CtaBand, IndustriesGrid, ProcessSteps } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Enterprise & custom solutions",
@@ -23,6 +24,7 @@ export default function EnterprisePage() {
   return (
     <>
       <PageHero
+        image={photo(photos.lightsWall, 1920)}
         eyebrow="Custom solutions for companies"
         title="Built for your business. Owned by you."
         lead="When off-the-shelf software doesn't fit, we engineer the system that does — and stay to make it better."
@@ -35,7 +37,7 @@ export default function EnterprisePage() {
         </ButtonLink>
       </PageHero>
 
-      <Section tone="light" id="brief" className="!bg-[#f5f5f6]">
+      <Section tone="light" id="brief">
         <div className="container-x">
           <SectionHeader
             align="center"
@@ -54,8 +56,8 @@ export default function EnterprisePage() {
           <SectionHeader eyebrow="Our commitments" title="What every client gets." />
           <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {commitments.map(([Icon, t, d], i) => (
-              <div key={t} data-reveal style={{ ["--delay" as string]: `${(i % 3) * 70}ms` }} className="card-glow p-7">
-                <Icon className="size-5 text-accent-soft" strokeWidth={1.5} />
+              <div key={t} data-reveal style={{ ["--delay" as string]: `${(i % 3) * 70}ms` }} className="border border-line bg-card p-7">
+                <Icon className="size-5 text-muted" strokeWidth={1.5} />
                 <p className="mt-8 text-lg font-medium">{t}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{d}</p>
               </div>
@@ -79,7 +81,7 @@ export default function EnterprisePage() {
         </div>
       </Section>
 
-      <Section tone="light" className="!pt-0">
+      <Section tone="dark">
         <div className="container-x">
           <SectionHeader eyebrow="Sectors" title="Where we go deep." />
           <IndustriesGrid />

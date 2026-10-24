@@ -70,7 +70,7 @@ export function ContactForm() {
 
 export function Success({ title, text, onReset }: { title: string; text: string; onReset?: () => void }) {
   return (
-    <div role="status" className="flex flex-col items-start gap-4 rounded-2xl border border-line bg-card p-8 fade-up">
+    <div role="status" className="flex flex-col items-start gap-4 border border-line bg-card p-8 fade-up">
       <CheckCircle2 className="size-8 text-accent" strokeWidth={1.5} />
       <div>
         <p className="text-xl font-medium">{title}</p>

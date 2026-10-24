@@ -4,6 +4,7 @@ import { aiSolutions } from "@/lib/content";
 import { ButtonLink, PageHero, Pill, Section, SectionHeader } from "@/components/ui";
 import { ChatButton } from "@/components/site/chat-button";
 import { CtaBand } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "AI Solutions",
@@ -29,6 +30,7 @@ export default function AiPage() {
   return (
     <>
       <PageHero
+        image={photo(photos.glowLines, 1920)}
         eyebrow="AI solutions"
         title="Models that speak your domain, privately."
         lead="We design, fine-tune and deploy AI systems — from copilots and agents to bespoke domain models running securely inside your walls."
@@ -44,8 +46,8 @@ export default function AiPage() {
           <SectionHeader eyebrow="Solution catalog" title="Proven patterns, tailored to you." lead="Each solution starts from a battle-tested blueprint and is adapted to your data, workflows and constraints." />
           <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {aiSolutions.map((s, i) => (
-              <article key={s.name} data-reveal style={{ ["--delay" as string]: `${(i % 4) * 60}ms` }} className="card-glow flex flex-col p-6">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-invert text-invert-fg">
+              <article key={s.name} data-reveal style={{ ["--delay" as string]: `${(i % 4) * 60}ms` }} className="border border-line bg-card flex flex-col p-6">
+                <span className="flex size-10 items-center justify-center bg-invert text-invert-fg">
                   <Sparkles className="size-4" strokeWidth={1.5} />
                 </span>
                 <h3 className="mt-8 text-lg font-medium">{s.name}</h3>
@@ -62,17 +64,16 @@ export default function AiPage() {
       </Section>
 
       <Section tone="dark" className="overflow-hidden">
-        <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden />
         <div className="container-x relative">
           <SectionHeader align="center" eyebrow="Architecture" title="Intelligence, layered on what you already have." />
           <div className="mt-16 grid items-stretch gap-4 lg:grid-cols-3">
             {stack.map((col, i) => (
-              <div key={col.name} data-reveal style={{ ["--delay" as string]: `${i * 100}ms` }} className={`card-glow p-7 ${i === 1 ? "ring-1 ring-accent/40 lg:-my-4 lg:py-11" : ""}`}>
+              <div key={col.name} data-reveal style={{ ["--delay" as string]: `${i * 100}ms` }} className={`border border-line bg-card p-7 ${i === 1 ? "ring-1 ring-accent/40 lg:-my-4 lg:py-11" : ""}`}>
                 <p className="eyebrow">{String(i + 1).padStart(2, "0")}</p>
                 <p className="mt-4 text-xl font-medium">{col.name}</p>
                 <ul className="mt-6 space-y-3">
                   {col.items.map((it) => (
-                    <li key={it} className="flex items-center gap-3 rounded-xl border border-line bg-white/[0.02] px-4 py-3 text-sm">
+                    <li key={it} className="flex items-center gap-3 border border-line bg-white/[0.02] px-4 py-3 text-sm">
                       <span className={`size-1.5 rounded-full ${i === 1 ? "bg-accent" : "bg-white/40"}`} /> {it}
                     </li>
                   ))}
@@ -90,7 +91,7 @@ export default function AiPage() {
             title="Security and integrity are preconditions."
             lead="AI earns its place only when people can rely on it. Every system we ship comes with these guarantees."
           />
-          <ul className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2" data-reveal>
+          <ul className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2" data-reveal>
             {guarantees.map((g) => (
               <li key={g} className="flex gap-3 bg-bg p-6 text-[15px]">
                 <Check className="mt-0.5 size-5 shrink-0 text-accent" /> {g}
@@ -100,7 +101,7 @@ export default function AiPage() {
         </div>
       </Section>
 
-      <Section tone="light" className="!bg-[#f5f5f6]">
+      <Section tone="dark">
         <div className="container-x">
           <SectionHeader eyebrow="The AI Sprint" title="From idea to working pilot in weeks." />
           <ol className="mt-16 grid gap-4 md:grid-cols-4">
@@ -110,7 +111,7 @@ export default function AiPage() {
               ["Week 3", "Evaluate", "Measured against your own test questions and success criteria."],
               ["Week 4", "Decide", "A clear go/no-go, ROI case and a production roadmap."],
             ].map(([w, t, d], i) => (
-              <li key={w} data-reveal style={{ ["--delay" as string]: `${i * 80}ms` }} className="rounded-3xl bg-white p-7">
+              <li key={w} data-reveal style={{ ["--delay" as string]: `${i * 80}ms` }} className="border border-line bg-card p-7">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent">{w}</p>
                 <p className="mt-6 text-lg font-medium">{t}</p>
                 <p className="mt-2 text-sm text-muted">{d}</p>

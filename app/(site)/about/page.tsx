@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { founder, principles, site, values } from "@/lib/content";
 import { ButtonLink, PageHero, Section, SectionHeader } from "@/components/ui";
 import { CtaBand } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
+import { Logo } from "@/components/logo";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -12,6 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        image={photo(photos.tower, 1920)}
         eyebrow={`Est. ${site.founded} · ${site.address.city}`}
         title="We are the engineers of the intelligent future."
         lead="ORIZON designs, builds and operates the software and systems modern organizations run on — and layers intelligence into every one, so they don't just work: they learn, adapt and accelerate."
@@ -20,14 +23,13 @@ export default function AboutPage() {
       {/* Vision & mission */}
       <Section tone="light">
         <div className="container-x grid gap-6 lg:grid-cols-2">
-          <div data-reveal className="rounded-3xl bg-card p-8 md:p-12">
+          <div data-reveal className="bg-card p-8 md:p-12">
             <p className="eyebrow">Our vision</p>
             <p className="display mt-8 text-3xl md:text-4xl text-balance">
               A world where the most important systems run on intelligence you can trust.
             </p>
           </div>
-          <div data-reveal style={{ ["--delay" as string]: "100ms" }} className="tone-dark relative overflow-hidden rounded-3xl p-8 md:p-12">
-            <div className="horizon-glow pointer-events-none absolute inset-x-0 bottom-0 h-2/3" aria-hidden />
+          <div data-reveal style={{ ["--delay" as string]: "100ms" }} className="tone-dark relative overflow-hidden p-8 md:p-12">
             <div className="relative">
               <p className="eyebrow">Our mission</p>
               <p className="display mt-8 text-3xl md:text-4xl text-balance">
@@ -43,7 +45,7 @@ export default function AboutPage() {
             ["Embed intelligence", "Every system is made to learn and improve, turning data into compounding advantage."],
             ["Earn absolute trust", "Security, reliability and integrity are preconditions for everything we ship."],
           ].map(([t, d], i) => (
-            <div key={t} data-reveal style={{ ["--delay" as string]: `${i * 80}ms` }} className="rounded-3xl border border-line p-8">
+            <div key={t} data-reveal style={{ ["--delay" as string]: `${i * 80}ms` }} className="border border-line p-8">
               <p className="text-xs tabular-nums text-accent">0{i + 1}</p>
               <p className="mt-6 text-lg font-medium">{t}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">{d}</p>
@@ -76,9 +78,9 @@ export default function AboutPage() {
         <div className="container-x grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
           <div data-reveal>
             <p className="eyebrow">A word from the founder</p>
-            <div className="mt-8 flex aspect-square w-full max-w-xs items-end rounded-3xl bg-invert p-6 text-invert-fg">
+            <div className="mt-8 flex aspect-square w-full max-w-xs items-end bg-invert p-6 text-invert-fg">
               <div>
-                <p className="wordmark text-xs opacity-60">ORIZON</p>
+                <Logo className="h-2.5 opacity-60" />
                 <p className="mt-3 text-xl font-medium">{founder.name}</p>
                 <p className="mt-1 text-sm opacity-60">{founder.role}</p>
               </div>
@@ -99,7 +101,6 @@ export default function AboutPage() {
 
       {/* Manifesto */}
       <section className="tone-dark relative overflow-hidden py-28 md:py-40">
-        <div className="stars pointer-events-none absolute inset-0 opacity-70" aria-hidden />
         <div className="container-x relative max-w-4xl">
           <p className="eyebrow">The ORIZON manifesto</p>
           <div className="mt-10 space-y-8">
@@ -109,7 +110,7 @@ export default function AboutPage() {
               "We believe in building over talking, in trust over hype, in impact over noise.",
               "We are ORIZON. We engineer beyond the horizon.",
             ].map((line, i) => (
-              <p key={line} data-reveal style={{ ["--delay" as string]: `${i * 90}ms` }} className={`display text-3xl md:text-5xl text-balance ${i === 3 ? "text-gradient" : "text-white/70"}`}>
+              <p key={line} data-reveal style={{ ["--delay" as string]: `${i * 90}ms` }} className={`display text-3xl md:text-5xl text-balance ${i === 3 ? "text-white" : "text-white/70"}`}>
                 {line}
               </p>
             ))}
@@ -120,7 +121,7 @@ export default function AboutPage() {
       <Section tone="light">
         <div className="container-x">
           <SectionHeader eyebrow="Operating principles" title="The rules that decide everything." />
-          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {principles.map((p, i) => (
               <div key={p.name} data-reveal style={{ ["--delay" as string]: `${(i % 3) * 70}ms` }} className="bg-bg p-8">
                 <p className="text-xs tabular-nums text-faint">0{i + 1}</p>

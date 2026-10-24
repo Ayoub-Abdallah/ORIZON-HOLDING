@@ -6,6 +6,7 @@ import { Download, LogOut, RefreshCw, Send } from "lucide-react";
 import type { Conversation, Lead } from "@/lib/schemas";
 import { cn } from "@/lib/utils";
 import { formatSlot } from "@/lib/slots";
+import { Logo } from "@/components/logo";
 
 export function AdminLogin() {
   const router = useRouter();
@@ -31,7 +32,7 @@ export function AdminLogin() {
           else setError(((await res.json().catch(() => ({}))) as { error?: string }).error ?? "Login failed");
         }}
       >
-        <p className="wordmark text-center text-sm">ORIZON</p>
+        <Logo className="mx-auto h-3" />
         <p className="text-center text-sm text-muted">Team inbox</p>
         <input
           name="password"
@@ -137,7 +138,7 @@ export function Inbox() {
     <main className="tone-light flex min-h-dvh flex-col">
       <header className="tone-dark flex h-14 items-center justify-between px-5">
         <div className="flex items-center gap-4">
-          <span className="wordmark text-xs">ORIZON</span>
+          <Logo className="h-2.5" />
           <span className="text-xs text-muted">Inbox</span>
         </div>
         <div className="flex items-center gap-1">

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { roles, values } from "@/lib/content";
 import { ButtonLink, PageHero, Section, SectionHeader } from "@/components/ui";
 import { ApplicationForm } from "@/components/forms/application-form";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -13,6 +14,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
+        image={photo(photos.blackCircuit, 1920)}
         eyebrow="Careers"
         title="Build the systems that move the world."
         lead="Small teams, clear owners, short cycles. We hire people who compound — and give them the hardest, most meaningful problems we can find."
@@ -55,7 +57,7 @@ export default function CareersPage() {
               ))}
             </ul>
           </div>
-          <div className="card-glow p-6 md:p-10" data-reveal>
+          <div className="border border-line bg-card p-6 md:p-10" data-reveal>
             <ApplicationForm />
           </div>
         </div>

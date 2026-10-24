@@ -1,19 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "ORIZON — Intelligence, engineered.",
+    default: "ORIZON — Engineering tomorrow.",
     template: "%s · ORIZON",
   },
   description: site.description,
@@ -22,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "ORIZON",
-    title: "ORIZON — Intelligence, engineered.",
+    title: "ORIZON — Engineering tomorrow.",
     description: site.description,
   },
   twitter: { card: "summary_large_image" },
@@ -35,8 +41,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={montserrat.variable} suppressHydrationWarning>
+    <html lang="en" className={`${instrumentSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Enables reveal-on-scroll only when JS runs, so content is never hidden without it. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
