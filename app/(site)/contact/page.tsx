@@ -6,6 +6,7 @@ import { PageHero, Section, SectionHeader } from "@/components/ui";
 import { ContactForm } from "@/components/forms/contact-form";
 import { BookingWidget } from "@/components/forms/booking";
 import { ChatButton } from "@/components/site/chat-button";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        image="/images/globe2.webp"
+        image={photo(photos.earthLights, 1920)}
         eyebrow="Contact"
         title="Let's talk about what you're building."
         lead="Write to us, book a call, or chat right now. An engineer — not a salesperson — will answer."

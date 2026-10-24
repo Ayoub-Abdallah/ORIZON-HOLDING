@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { photo, photos } from "@/lib/images";
 
 export default function NotFound() {
   return (
     <main className="tone-dark relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/bridge2.webp" alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      <img src={photo(photos.blueBlur, 1920)} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" aria-hidden />
       <p className="eyebrow relative">404</p>
       <h1 className="display relative mt-6 text-5xl md:text-7xl">Beyond the horizon.</h1>

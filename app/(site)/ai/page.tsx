@@ -4,6 +4,7 @@ import { aiSolutions } from "@/lib/content";
 import { ButtonLink, PageHero, Pill, Section, SectionHeader } from "@/components/ui";
 import { ChatButton } from "@/components/site/chat-button";
 import { CtaBand } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "AI Solutions",
@@ -29,7 +30,7 @@ export default function AiPage() {
   return (
     <>
       <PageHero
-        image="/images/audit3.webp"
+        image={photo(photos.glowLines, 1920)}
         eyebrow="AI solutions"
         title="Models that speak your domain, privately."
         lead="We design, fine-tune and deploy AI systems — from copilots and agents to bespoke domain models running securely inside your walls."

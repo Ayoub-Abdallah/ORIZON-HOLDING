@@ -11,6 +11,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 import type { Division } from "@/lib/content";
 
 type Variant = "primary" | "secondary" | "ghost";
@@ -134,7 +135,7 @@ export function Pill({ children, className }: { children: ReactNode; className?:
 }
 
 export function Wordmark({ className }: { className?: string }) {
-  return <span className={cn("wordmark text-2xl", className)}>ORIZON</span>;
+  return <Logo className={cn("h-4 md:h-[18px]", className)} />;
 }
 
 export function PageHero({

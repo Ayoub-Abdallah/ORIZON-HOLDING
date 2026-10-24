@@ -4,6 +4,7 @@ import { principles } from "@/lib/content";
 import { ButtonLink, PageHero, Section, SectionHeader } from "@/components/ui";
 import { BriefBuilder } from "@/components/forms/brief-builder";
 import { CtaBand, IndustriesGrid, ProcessSteps } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Enterprise & custom solutions",
@@ -23,7 +24,7 @@ export default function EnterprisePage() {
   return (
     <>
       <PageHero
-        image="/images/connection2.webp"
+        image={photo(photos.lightsWall, 1920)}
         eyebrow="Custom solutions for companies"
         title="Built for your business. Owned by you."
         lead="When off-the-shelf software doesn't fit, we engineer the system that does — and stay to make it better."

@@ -64,8 +64,9 @@ export function Hero() {
           poster="/videos/hero-poster.jpg"
           className="h-full w-full object-cover object-center opacity-80"
         >
-          <source src="/videos/hero-720.mp4" type="video/mp4" media="(max-width: 767px)" />
-          <source src="/videos/hero.webm" type="video/webm" />
+          {/* Phones get a small H.264 file; desktops get AV1 (sharpest per byte) with an H.264 fallback. */}
+          <source src="/videos/hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+          <source src="/videos/hero.av1.mp4" type='video/mp4; codecs="av01.0.05M.10"' />
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
@@ -73,10 +74,10 @@ export function Hero() {
       </div>
 
       <div className="container-x relative z-10 pb-16 pt-32 lg:pt-36">
-        <div className="lg:max-w-[62%]">
+        <div>
           <p className="eyebrow fade-up text-white/60">Software, AI and custom solutions — engineered as one.</p>
           <h1
-            className="display fade-up mt-8 text-[clamp(2.6rem,7vw,7.5rem)] text-white"
+            className="display fade-up mt-8 whitespace-nowrap text-[clamp(1.6rem,8.6vw,7.5rem)] text-white"
             style={{ ["--delay" as string]: "80ms" }}
           >
             <span className="block">Engineering tomorrow,</span>

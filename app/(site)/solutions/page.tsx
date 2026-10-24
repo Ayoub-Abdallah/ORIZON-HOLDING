@@ -4,6 +4,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { divisions } from "@/lib/content";
 import { ButtonLink, DivisionIcon, PageHero, Section, SectionHeader } from "@/components/ui";
 import { CtaBand, IndustriesGrid, OffersGrid } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -14,7 +15,7 @@ export default function SolutionsPage() {
   return (
     <>
       <PageHero
-        image="/images/globe.webp"
+        image={photo(photos.serverRack, 1920)}
         eyebrow="Solutions"
         title="Seven divisions. One standard."
         lead="A dashboard needs data; data invites intelligence; intelligence demands security. One relationship with ORIZON covers the whole stack."

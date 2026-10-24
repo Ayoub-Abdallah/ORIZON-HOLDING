@@ -6,6 +6,7 @@ import { Hero } from "@/components/home/hero";
 import { Trust } from "@/components/home/trust";
 import { ChatButton } from "@/components/site/chat-button";
 import { CtaBand, DivisionsBento, IndustriesGrid, OffersGrid, ProcessSteps } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
 
 const marquee = ["Large language models", "Retrieval & RAG", "Autonomous agents", "Custom platforms", "Web & mobile", "Data engineering", "Cloud & Kubernetes", "Zero-trust security", "Enterprise systems", "Computer vision"];
 
@@ -87,7 +88,7 @@ export default function Home() {
             </div>
             <div className="relative hidden w-[40%] shrink-0 lg:block" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/2.webp" alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center" />
+              <img src={photo(photos.glowLines, 1200)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center" />
               <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent" />
             </div>
           </div>
@@ -129,7 +130,7 @@ export default function Home() {
             </div>
             <div className="relative h-[320px] lg:h-[560px]" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/3.webp" alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain object-bottom [mask-image:radial-gradient(ellipse_45%_60%_at_50%_45%,black_45%,transparent_100%)]" />
+              <img src={photo(photos.blueBlur, 1200)} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover [mask-image:radial-gradient(ellipse_45%_60%_at_50%_45%,black_45%,transparent_100%)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent" />
             </div>
           </div>
@@ -161,7 +162,7 @@ export default function Home() {
             <SectionHeader eyebrow="How to work with us" title="Outcomes," sub="not hours." lead="Clear offers priced on results. Start small with a sprint, or bring us the whole transformation." />
             <div className="relative h-64 lg:h-96" aria-hidden data-reveal>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/whale.webp" alt="" loading="lazy" decoding="async" className="h-full w-full object-contain" />
+              <img src={photo(photos.tealWaves, 1400)} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
             </div>
           </div>
           <OffersGrid />

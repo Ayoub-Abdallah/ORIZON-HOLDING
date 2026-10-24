@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { divisions, site } from "@/lib/content";
 import { Newsletter } from "@/components/forms/newsletter";
 import { Wordmark } from "@/components/ui";
+import { photo, photos } from "@/lib/images";
 
 const company = [
   { label: "About", href: "/about" },
@@ -17,7 +18,7 @@ export function Footer() {
     <footer className="tone-dark relative overflow-hidden">
       <div className="relative h-[280px] w-full overflow-hidden md:h-[420px]" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/terrain2.webp" alt="" loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
+        <img src={photo(photos.earthNight, 2000)} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)] via-transparent to-[var(--bg)]" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>

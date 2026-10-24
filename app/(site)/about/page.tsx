@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { founder, principles, site, values } from "@/lib/content";
 import { ButtonLink, PageHero, Section, SectionHeader } from "@/components/ui";
 import { CtaBand } from "@/components/sections";
+import { photo, photos } from "@/lib/images";
+import { Logo } from "@/components/logo";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -12,7 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        image="/images/1.webp"
+        image={photo(photos.tower, 1920)}
         eyebrow={`Est. ${site.founded} · ${site.address.city}`}
         title="We are the engineers of the intelligent future."
         lead="ORIZON designs, builds and operates the software and systems modern organizations run on — and layers intelligence into every one, so they don't just work: they learn, adapt and accelerate."
@@ -78,7 +80,7 @@ export default function AboutPage() {
             <p className="eyebrow">A word from the founder</p>
             <div className="mt-8 flex aspect-square w-full max-w-xs items-end bg-invert p-6 text-invert-fg">
               <div>
-                <p className="wordmark text-xs opacity-60">ORIZON</p>
+                <Logo className="h-2.5 opacity-60" />
                 <p className="mt-3 text-xl font-medium">{founder.name}</p>
                 <p className="mt-1 text-sm opacity-60">{founder.role}</p>
               </div>

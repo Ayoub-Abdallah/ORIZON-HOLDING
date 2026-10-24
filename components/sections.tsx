@@ -4,6 +4,7 @@ import { deliverySteps, divisions, industries, offers } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { ButtonLink, DivisionIcon, Section, SectionHeader } from "@/components/ui";
 import { ChatButton } from "@/components/site/chat-button";
+import { photo, photos } from "@/lib/images";
 
 /** Service cards: each division with its artwork as the card background. */
 export function DivisionsBento() {
@@ -109,7 +110,7 @@ export function CtaBand({
       <div className="container-x">
         <div className="image-card relative min-h-[32rem] px-8 py-16 md:px-16 md:py-24" data-reveal>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/bridge2.webp" alt="" loading="lazy" decoding="async" className="object-center" />
+          <img src={photo(photos.blueWallpaper, 1920)} alt="" loading="lazy" decoding="async" className="object-center" />
           <div className="relative max-w-2xl">
             <p className="eyebrow text-white/60">Engineering beyond the horizon</p>
             <h2 className="display mt-6 text-5xl text-white sm:text-6xl md:text-7xl text-balance">{title}</h2>

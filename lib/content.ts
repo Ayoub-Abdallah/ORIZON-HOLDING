@@ -1,6 +1,8 @@
 // Single source of truth for all site copy. Derived from the ORIZON
 // Identity & Business Plan (software & intelligence divisions only).
 
+import { photo, photos } from "./images";
+
 export const site = {
   name: "ORIZON",
   tagline: "Engineering beyond the horizon.",
@@ -67,7 +69,7 @@ export const divisions: Division[] = [
     ],
     stack: ["LLMs", "RAG", "Agents", "Vision", "MLOps"],
     icon: "brain",
-    image: "/images/2.webp",
+    image: photo(photos.intelligence, 1400),
   },
   {
     slug: "software-engineering",
@@ -89,7 +91,7 @@ export const divisions: Division[] = [
     ],
     stack: ["TypeScript", "Python", "Go", "APIs", "Microservices"],
     icon: "code",
-    image: "/images/stairs.webp",
+    image: photo(photos.software, 1400),
   },
   {
     slug: "digital-products",
@@ -111,7 +113,7 @@ export const divisions: Division[] = [
     ],
     stack: ["React", "Next.js", "iOS", "Android", "Design systems"],
     icon: "layout",
-    image: "/images/permissions1.webp",
+    image: photo(photos.products, 1400),
   },
   {
     slug: "data-platforms",
@@ -133,7 +135,7 @@ export const divisions: Division[] = [
     ],
     stack: ["Streaming", "Lakehouse", "dbt", "BI", "Governance"],
     icon: "database",
-    image: "/images/globe.webp",
+    image: photo(photos.data, 1400),
   },
   {
     slug: "cloud-infrastructure",
@@ -155,7 +157,7 @@ export const divisions: Division[] = [
     ],
     stack: ["AWS", "GCP", "Azure", "Kubernetes", "Terraform"],
     icon: "cloud",
-    image: "/images/globe2.webp",
+    image: photo(photos.cloud, 1400),
   },
   {
     slug: "cybersecurity",
@@ -177,7 +179,7 @@ export const divisions: Division[] = [
     ],
     stack: ["Zero-trust", "IAM", "SIEM", "Pentest", "Compliance"],
     icon: "shield",
-    image: "/images/shield2.webp",
+    image: photo(photos.security, 1400),
   },
   {
     slug: "enterprise-systems",
@@ -199,7 +201,7 @@ export const divisions: Division[] = [
     ],
     stack: ["ERP", "CRM", "Automation", "Integration", "Workflows"],
     icon: "workflow",
-    image: "/images/connection2.webp",
+    image: photo(photos.enterprise, 1400),
   },
 ];
 

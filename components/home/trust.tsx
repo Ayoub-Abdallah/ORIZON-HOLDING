@@ -2,31 +2,32 @@
 
 import { useState } from "react";
 import { Eye, FileLock2, KeyRound, ShieldCheck } from "lucide-react";
+import { photo, photos } from "@/lib/images";
 
 const features = [
   {
     icon: ShieldCheck,
     title: "Secure by design",
     text: "Threat modeling, code review and hardening from the first commit — never bolted on.",
-    image: "/images/shield2.webp",
+    image: photo(photos.security, 1200),
   },
   {
     icon: FileLock2,
     title: "Encrypted end to end",
     text: "Data encrypted in transit and at rest, with keys you control.",
-    image: "/images/encrypted.webp",
+    image: photo(photos.ledPanel, 1200),
   },
   {
     icon: Eye,
     title: "Full audit trails",
     text: "Every action by people and AI agents is logged, attributable and reviewable.",
-    image: "/images/audit3.webp",
+    image: photo(photos.motherboard, 1200),
   },
   {
     icon: KeyRound,
     title: "Permission-aware AI",
     text: "Assistants only see and answer from what the asking user is allowed to access.",
-    image: "/images/permissions1.webp",
+    image: photo(photos.blueCircuit, 1200),
   },
 ];
 
@@ -46,8 +47,8 @@ export function Trust() {
             alt=""
             loading="lazy"
             decoding="async"
-            className="!object-contain !object-right !p-8 transition-opacity duration-500 [mask-image:radial-gradient(ellipse_at_70%_50%,black_35%,transparent_70%)]"
-            style={{ opacity: active === i ? 0.9 : 0 }}
+            className="transition-opacity duration-700"
+            style={{ opacity: active === i ? 0.75 : 0 }}
           />
         ))}
         <div className="relative flex h-full flex-col justify-between gap-16">
