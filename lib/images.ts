@@ -1,6 +1,6 @@
-/** Unsplash photo (free licence) served from Unsplash's CDN, resized and auto-formatted (AVIF/WebP). */
+/** Unsplash photo (free licence) served from Unsplash's CDN: resized, auto-formatted (AVIF/WebP) and desaturated so every image shares one monochrome look. */
 export const photo = (id: string, width = 1600) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${width}&q=70`;
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${width}&q=70&sat=-100`;
 
 export const photos = {
   // Divisions

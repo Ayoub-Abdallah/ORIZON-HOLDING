@@ -95,6 +95,11 @@
 }
 
 @layer components {
+  /* One photographic identity: every photo is monochrome, slightly deepened. */
+  img[src^="https://images.unsplash.com"] {
+    filter: grayscale(1) contrast(1.08) brightness(0.9);
+  }
+
   .container-x {
     width: 100%;
     max-width: 1400px;
