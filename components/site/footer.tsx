@@ -83,9 +83,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-x flex flex-col items-start justify-between gap-3 border-t border-line py-6 text-xs text-faint sm:flex-row sm:items-center">
+      <div className="container-x flex flex-col items-start justify-between gap-3 border-t border-line pb-24 pt-6 text-xs text-faint sm:pb-6 sm:flex-row sm:items-center">
         <p>© {new Date().getFullYear()} ORIZON. All rights reserved.</p>
-        <p className="tracking-[0.25em] uppercase">{site.tagline}</p>
+        <p className="hidden tracking-[0.25em] uppercase sm:block">{site.tagline}</p>
       </div>
     </footer>
   );

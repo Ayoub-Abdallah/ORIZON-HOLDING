@@ -80,7 +80,12 @@
     scroll-padding-top: 6rem;
     -webkit-tap-highlight-color: transparent;
   }
+  /* Grid children may shrink below their content (e.g. horizontal scrollers), so nothing widens the page on phones. */
+  .grid > * {
+    min-width: 0;
+  }
   body {
+    overflow-x: clip;
     background: var(--ink);
     color: var(--fg);
   }

@@ -40,7 +40,7 @@ export function useLeadSubmit() {
 }
 
 const inputBase =
-  "w-full rounded-xl border border-line bg-bg px-4 py-3 text-[15px] text-fg placeholder:text-faint outline-none transition-colors focus:border-accent focus:ring-4 focus:ring-accent/15";
+  "w-full rounded-xl border border-line bg-bg px-4 py-3 text-base sm:text-[15px] text-fg placeholder:text-faint outline-none transition-colors focus:border-accent focus:ring-4 focus:ring-accent/15";
 
 export function Field({
   label,

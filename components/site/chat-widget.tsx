@@ -46,6 +46,16 @@ export function ChatWidget() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const seen = useRef(0);
 
+  // On phones the chat is full-screen: stop the page behind it from scrolling.
+  useEffect(() => {
+    if (!open || window.matchMedia("(min-width: 640px)").matches) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
   useEffect(() => {
     const c = load();
     if (c) {
@@ -174,7 +184,7 @@ export function ChatWidget() {
         <div
           role="dialog"
           aria-label="Chat with ORIZON"
-          className="fade-up flex h-[min(640px,calc(100dvh-6rem))] w-[calc(100vw-2rem)] max-w-[400px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0d]/95 shadow-[0_40px_120px_-20px_rgb(0_0_0/0.8)] backdrop-blur-xl"
+          className="fade-up fixed inset-0 z-[61] flex h-[100dvh] w-full flex-col overflow-hidden bg-[#0b0b0d] pb-[env(safe-area-inset-bottom)] sm:static sm:inset-auto sm:h-[min(640px,calc(100dvh-6rem))] sm:w-[400px] sm:max-w-[calc(100vw-2rem)] sm:rounded-3xl sm:border sm:border-white/10 sm:bg-[#0b0b0d]/95 sm:pb-0 sm:shadow-[0_40px_120px_-20px_rgb(0_0_0/0.8)] sm:backdrop-blur-xl"
         >
           <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div className="flex items-center gap-3">
@@ -221,8 +231,8 @@ export function ChatWidget() {
                 }}
               >
                 <p className="text-sm">Who should we reply to?</p>
-                <input name="name" required placeholder="Your name" autoComplete="name" className="w-full rounded-lg border border-white/10 bg-black px-3 py-2.5 text-sm outline-none focus:border-accent" />
-                <input name="email" type="email" required placeholder="Email" autoComplete="email" className="w-full rounded-lg border border-white/10 bg-black px-3 py-2.5 text-sm outline-none focus:border-accent" />
+                <input name="name" required placeholder="Your name" autoComplete="name" className="w-full rounded-lg border border-white/10 bg-black px-3 py-2.5 text-base outline-none sm:text-sm focus:border-accent" />
+                <input name="email" type="email" required placeholder="Email" autoComplete="email" className="w-full rounded-lg border border-white/10 bg-black px-3 py-2.5 text-base outline-none sm:text-sm focus:border-accent" />
                 <div className="flex gap-2 pt-1">
                   <button type="submit" disabled={pending} className="h-9 flex-1 rounded-lg bg-white text-sm font-medium text-black disabled:opacity-50">
                     {pending ? "Connecting…" : "Connect me"}
@@ -264,7 +274,7 @@ export function ChatWidget() {
                 placeholder="Write a message…"
                 maxLength={2000}
                 aria-label="Message"
-                className="max-h-32 min-h-9 flex-1 resize-none bg-transparent py-2 text-sm outline-none placeholder:text-faint"
+                className="max-h-32 min-h-9 flex-1 resize-none bg-transparent py-2 text-base outline-none sm:text-sm placeholder:text-faint"
               />
               <button type="submit" disabled={!input.trim() || pending} aria-label="Send" className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white text-black transition-opacity disabled:opacity-30">
                 <ArrowUp className="size-4" />
@@ -279,7 +289,7 @@ export function ChatWidget() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
         aria-expanded={open}
-        className="group relative flex h-14 items-center gap-2 rounded-full border border-white/15 bg-black pl-4 pr-5 text-sm font-medium text-white shadow-[0_20px_50px_-10px_rgb(0_0_0/0.6),0_0_0_1px_rgb(255_255_255/0.04)] transition-transform hover:scale-[1.03]"
+        className={cn("group relative h-14", open ? "hidden sm:flex" : "flex", " items-center gap-2 rounded-full border border-white/15 bg-black pl-4 pr-5 text-sm font-medium text-white shadow-[0_20px_50px_-10px_rgb(0_0_0/0.6),0_0_0_1px_rgb(255_255_255/0.04)] transition-transform hover:scale-[1.03]")}
       >
         <span className="absolute inset-0 -z-10 rounded-full bg-accent/40 opacity-0 blur-xl transition-opacity group-hover:opacity-100" aria-hidden />
         {open ? <X className="size-5" /> : <MessageCircle className="size-5" strokeWidth={1.75} />}
