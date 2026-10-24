@@ -177,7 +177,6 @@ export function ChatWidget() {
           className="fade-up flex h-[min(640px,calc(100dvh-6rem))] w-[calc(100vw-2rem)] max-w-[400px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0d]/95 shadow-[0_40px_120px_-20px_rgb(0_0_0/0.8)] backdrop-blur-xl"
         >
           <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <div className="horizon-line absolute inset-x-8 bottom-0 opacity-50" aria-hidden />
             <div className="flex items-center gap-3">
               <span className="relative flex size-9 items-center justify-center rounded-full bg-white text-[10px] font-semibold tracking-widest text-black">
                 O
@@ -304,7 +303,7 @@ function Bubble({ message }: { message: ChatMessage }) {
           message.role === "agent" && "border border-accent/40 bg-accent/10",
         )}
       >
-        {message.role === "agent" && <span className="mb-1 block text-[11px] uppercase tracking-wider text-accent-soft">ORIZON team</span>}
+        {message.role === "agent" && <span className="mb-1 block text-[11px] uppercase tracking-wider text-muted">ORIZON team</span>}
         {linkify(message.text)}
       </div>
     </div>

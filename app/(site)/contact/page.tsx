@@ -23,6 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        image="/images/globe2.webp"
         eyebrow="Contact"
         title="Let's talk about what you're building."
         lead="Write to us, book a call, or chat right now. An engineer — not a salesperson — will answer."
@@ -41,9 +42,9 @@ export default function ContactPage() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel="noreferrer"
-                    className="group flex items-center gap-4 rounded-2xl border border-line p-5 transition-colors hover:bg-card"
+                    className="group flex items-center gap-4 border border-line p-5 transition-colors hover:bg-card"
                   >
-                    <span className="flex size-11 items-center justify-center rounded-xl bg-invert text-invert-fg">
+                    <span className="flex size-11 items-center justify-center bg-invert text-invert-fg">
                       <c.icon className="size-4" strokeWidth={1.75} />
                     </span>
                     <span>
@@ -57,7 +58,7 @@ export default function ContactPage() {
             <p className="mt-6 flex items-center gap-2 text-sm text-muted">
               <Clock className="size-4" /> {site.hours}
             </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-line" data-reveal>
+            <div className="mt-8 overflow-hidden border border-line" data-reveal>
               <iframe
                 title="ORIZON office location — Bab Ezzouar, Algiers"
                 src="https://www.google.com/maps?q=Bab+Ezzouar,+Algiers&output=embed"
@@ -67,7 +68,7 @@ export default function ContactPage() {
               />
             </div>
           </div>
-          <div className="rounded-3xl border border-line p-6 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.25)] md:p-10" data-reveal>
+          <div className="border border-line p-6 md:p-10" data-reveal>
             <p className="text-2xl font-light tracking-tight">Send a message</p>
             <p className="mt-1 mb-8 text-sm text-muted">We reply within one business day.</p>
             <Suspense>
@@ -77,14 +78,14 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      <Section tone="light" id="book" className="!bg-[#f5f5f6]">
+      <Section tone="dark" id="book">
         <div className="container-x grid gap-14 lg:grid-cols-[1fr_1.4fr]">
           <SectionHeader
             eyebrow="Book a call"
             title="30 minutes with an engineer."
             lead="Pick a slot that works for you. We'll send a meeting link and come prepared with questions, not slides."
           />
-          <div className="rounded-3xl bg-white p-6 md:p-10" data-reveal>
+          <div className="border border-line bg-card p-6 md:p-10" data-reveal>
             <BookingWidget />
           </div>
         </div>

@@ -43,6 +43,7 @@ export type Division = {
   outcomes: string[];
   stack: string[];
   icon: "brain" | "code" | "layout" | "database" | "cloud" | "shield" | "workflow";
+  image: string;
 };
 
 export const divisions: Division[] = [
@@ -66,6 +67,7 @@ export const divisions: Division[] = [
     ],
     stack: ["LLMs", "RAG", "Agents", "Vision", "MLOps"],
     icon: "brain",
+    image: "/images/2.webp",
   },
   {
     slug: "software-engineering",
@@ -87,6 +89,7 @@ export const divisions: Division[] = [
     ],
     stack: ["TypeScript", "Python", "Go", "APIs", "Microservices"],
     icon: "code",
+    image: "/images/stairs.webp",
   },
   {
     slug: "digital-products",
@@ -108,6 +111,7 @@ export const divisions: Division[] = [
     ],
     stack: ["React", "Next.js", "iOS", "Android", "Design systems"],
     icon: "layout",
+    image: "/images/permissions1.webp",
   },
   {
     slug: "data-platforms",
@@ -129,6 +133,7 @@ export const divisions: Division[] = [
     ],
     stack: ["Streaming", "Lakehouse", "dbt", "BI", "Governance"],
     icon: "database",
+    image: "/images/globe.webp",
   },
   {
     slug: "cloud-infrastructure",
@@ -150,6 +155,7 @@ export const divisions: Division[] = [
     ],
     stack: ["AWS", "GCP", "Azure", "Kubernetes", "Terraform"],
     icon: "cloud",
+    image: "/images/globe2.webp",
   },
   {
     slug: "cybersecurity",
@@ -171,6 +177,7 @@ export const divisions: Division[] = [
     ],
     stack: ["Zero-trust", "IAM", "SIEM", "Pentest", "Compliance"],
     icon: "shield",
+    image: "/images/shield2.webp",
   },
   {
     slug: "enterprise-systems",
@@ -192,6 +199,7 @@ export const divisions: Division[] = [
     ],
     stack: ["ERP", "CRM", "Automation", "Integration", "Workflows"],
     icon: "workflow",
+    image: "/images/connection2.webp",
   },
 ];
 

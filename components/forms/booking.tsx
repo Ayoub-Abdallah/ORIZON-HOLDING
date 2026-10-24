@@ -39,12 +39,12 @@ export function BookingWidget() {
   const current = days.find((d) => d.key === day) ?? days[0];
 
   if (!current) {
-    return <div className="h-64 animate-pulse rounded-2xl bg-card" aria-label="Loading availability" />;
+    return <div className="h-64 animate-pulse bg-card" aria-label="Loading availability" />;
   }
 
   if (booked) {
     return (
-      <div role="status" className="rounded-2xl border border-line bg-card p-8 fade-up">
+      <div role="status" className="border border-line bg-card p-8 fade-up">
         <CalendarCheck className="size-8 text-accent" strokeWidth={1.5} />
         <p className="mt-4 text-xl font-medium">You're booked.</p>
         <p className="mt-2 text-muted">

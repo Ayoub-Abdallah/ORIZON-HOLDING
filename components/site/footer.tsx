@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { divisions, site } from "@/lib/content";
 import { Newsletter } from "@/components/forms/newsletter";
+import { Wordmark } from "@/components/ui";
 
 const company = [
   { label: "About", href: "/about" },
@@ -13,9 +14,19 @@ const company = [
 
 export function Footer() {
   return (
-    <footer className="tone-dark relative overflow-hidden border-t border-line">
-      <div className="container-x relative grid gap-14 py-20 lg:grid-cols-[1.2fr_2fr]">
+    <footer className="tone-dark relative overflow-hidden">
+      <div className="relative h-[280px] w-full overflow-hidden md:h-[420px]" aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/terrain2.webp" alt="" loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)] via-transparent to-[var(--bg)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+      </div>
+      <div className="container-x relative grid gap-14 pb-20 pt-4 lg:grid-cols-[1.2fr_2fr]">
         <div className="space-y-8">
+          <Link href="/" aria-label="ORIZON home" className="inline-block">
+            <Wordmark />
+          </Link>
+          <p className="max-w-sm text-sm leading-relaxed text-muted">{site.description}</p>
           <Newsletter />
           <ul className="space-y-3 text-sm text-muted">
             <li>
@@ -69,11 +80,6 @@ export function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-
-      <div className="relative select-none overflow-hidden" aria-hidden>
-        <p className="text-center text-[13vw] font-extralight leading-[0.85] tracking-[0.28em] text-white/[0.06]" style={{ marginRight: "-0.28em" }}>ORIZON</p>
-        <div className="horizon-line absolute inset-x-0 bottom-0 opacity-60" />
       </div>
 
       <div className="container-x flex flex-col items-start justify-between gap-3 border-t border-line py-6 text-xs text-faint sm:flex-row sm:items-center">

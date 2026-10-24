@@ -14,6 +14,7 @@ export default function SolutionsPage() {
   return (
     <>
       <PageHero
+        image="/images/globe.webp"
         eyebrow="Solutions"
         title="Seven divisions. One standard."
         lead="A dashboard needs data; data invites intelligence; intelligence demands security. One relationship with ORIZON covers the whole stack."
@@ -42,7 +43,7 @@ export default function SolutionsPage() {
             ].map(([layer, name, tags], i) => (
               <div
                 key={layer}
-                className="flex items-center justify-between gap-6 rounded-2xl border border-line p-6"
+                className="flex items-center justify-between gap-6 border border-line p-6"
                 style={{ marginInline: `${i * 1.25}rem`, background: `rgb(10 10 10 / ${0.02 + i * 0.03})` }}
               >
                 <div>
@@ -66,12 +67,16 @@ export default function SolutionsPage() {
                 key={d.slug}
                 href={`/solutions/${d.slug}`}
                 data-reveal
-                className="group grid gap-6 py-10 transition-colors md:grid-cols-[80px_1.2fr_1.5fr_40px] md:items-start"
+                className="group grid gap-6 py-10 transition-colors md:grid-cols-[140px_1.2fr_1.5fr_40px] md:items-start"
               >
-                <span className="text-sm tabular-nums text-faint">{d.index}</span>
+                <span className="relative block aspect-[4/3] w-32 overflow-hidden border border-line bg-black">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={d.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105" />
+                  <span className="absolute left-2 top-2 font-mono text-[11px] text-white/80">{d.index}</span>
+                </span>
                 <div>
                   <div className="flex items-center gap-3">
-                    <DivisionIcon name={d.icon} className="text-accent-soft" />
+                    <DivisionIcon name={d.icon} className="text-muted" />
                     <h3 className="text-2xl font-light tracking-tight md:text-3xl">{d.name}</h3>
                   </div>
                   <p className="mt-3 text-sm uppercase tracking-[0.14em] text-faint">{d.kicker}</p>
@@ -79,7 +84,7 @@ export default function SolutionsPage() {
                 <ul className="grid gap-2.5 text-sm text-muted sm:grid-cols-2">
                   {d.deliver.map((x) => (
                     <li key={x} className="flex gap-2">
-                      <Check className="mt-0.5 size-4 shrink-0 text-accent-soft" /> {x}
+                      <Check className="mt-0.5 size-4 shrink-0 text-muted" /> {x}
                     </li>
                   ))}
                 </ul>
@@ -97,7 +102,7 @@ export default function SolutionsPage() {
         </div>
       </Section>
 
-      <Section tone="light" className="!pt-0">
+      <Section tone="dark">
         <div className="container-x">
           <SectionHeader eyebrow="Industries" title="Built for high-stakes sectors." />
           <IndustriesGrid />

@@ -17,12 +17,12 @@ type Variant = "primary" | "secondary" | "ghost";
 
 const variants: Record<Variant, string> = {
   primary: "bg-invert text-invert-fg hover:opacity-90",
-  secondary: "border border-line bg-card text-fg hover:bg-card-strong",
+  secondary: "border border-line text-fg hover:bg-card-strong",
   ghost: "text-fg hover:bg-card",
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-5 h-11 text-sm font-medium transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm font-medium transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
 
 export function ButtonLink({
   href,
@@ -48,6 +48,10 @@ export function Button({
   return <button className={cn(base, variants[variant], className)} {...rest} />;
 }
 
+/**
+ * Page section. Light sections render as rounded slabs on the dark page,
+ * giving the soft dark/light transitions.
+ */
 export function Section({
   tone,
   id,
@@ -60,7 +64,14 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className={cn(tone === "dark" ? "tone-dark" : "tone-light", "relative py-24 md:py-32", className)}>
+    <section
+      id={id}
+      className={cn(
+        tone === "dark" ? "tone-dark" : "tone-light slab",
+        "relative py-24 lg:py-32",
+        className,
+      )}
+    >
       {children}
     </section>
   );
@@ -69,24 +80,32 @@ export function Section({
 export function SectionHeader({
   eyebrow,
   title,
+  sub,
   lead,
   align = "left",
   className,
 }: {
   eyebrow: string;
   title: ReactNode;
+  /** Second, muted line of the headline. */
+  sub?: ReactNode;
   lead?: ReactNode;
   align?: "left" | "center";
   className?: string;
 }) {
   return (
-    <div
-      data-reveal
-      className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}
-    >
+    <div data-reveal className={cn("max-w-4xl", align === "center" && "mx-auto text-center", className)}>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="display mt-5 text-4xl sm:text-5xl md:text-6xl text-balance">{title}</h2>
-      {lead && <p className="mt-6 text-lg leading-relaxed text-muted text-pretty">{lead}</p>}
+      <h2 className="display mt-6 text-5xl md:text-6xl lg:text-[96px] text-balance">
+        {title}
+        {sub && (
+          <>
+            <br />
+            <span className="text-muted">{sub}</span>
+          </>
+        )}
+      </h2>
+      {lead && <p className={cn("mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-muted text-pretty", align === "center" && "mx-auto")}>{lead}</p>}
     </div>
   );
 }
@@ -108,46 +127,71 @@ export function DivisionIcon({ name, className }: { name: Division["icon"]; clas
 
 export function Pill({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <span className={cn("inline-flex items-center rounded-full border border-line px-3 py-1 text-xs text-muted", className)}>
+    <span className={cn("inline-flex items-center border border-line px-3 py-1 font-mono text-xs text-muted", className)}>
       {children}
     </span>
   );
 }
 
 export function Wordmark({ className }: { className?: string }) {
-  return <span className={cn("wordmark text-[15px]", className)}>ORIZON</span>;
+  return <span className={cn("wordmark text-2xl", className)}>ORIZON</span>;
 }
 
 export function PageHero({
   eyebrow,
   title,
+  sub,
   lead,
+  image,
   children,
 }: {
   eyebrow: string;
   title: ReactNode;
+  sub?: ReactNode;
   lead: ReactNode;
+  /** Optional artwork shown on the right, faded into the background. */
+  image?: string;
   children?: ReactNode;
 }) {
   return (
-    <section className="tone-dark relative overflow-hidden pt-40 pb-24 md:pt-48 md:pb-32">
-      <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden />
-      <div className="horizon-glow pointer-events-none absolute inset-x-0 bottom-0 h-[70%]" aria-hidden />
-      <div className="horizon-line pointer-events-none absolute inset-x-0 bottom-0" aria-hidden />
+    <section className="tone-dark relative overflow-hidden pt-40 pb-24 lg:pt-52 lg:pb-32">
+      {image && (
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-full opacity-60 lg:w-[55%] lg:opacity-100" aria-hidden>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image} alt="" className="h-full w-full object-cover object-center" fetchPriority="high" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-[var(--bg)]/40" />
+        </div>
+      )}
       <div className="container-x relative">
         <p className="eyebrow fade-up">{eyebrow}</p>
-        <h1 className="display text-gradient mt-6 max-w-4xl text-5xl sm:text-6xl md:text-7xl text-balance fade-up" style={{ ["--delay" as string]: "80ms" }}>
+        <h1 className="display fade-up mt-8 max-w-5xl text-5xl sm:text-6xl lg:text-[112px] text-balance" style={{ ["--delay" as string]: "80ms" }}>
           {title}
+          {sub && (
+            <>
+              <br />
+              <span className="text-muted">{sub}</span>
+            </>
+          )}
         </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted text-pretty fade-up" style={{ ["--delay" as string]: "160ms" }}>
+        <p className="fade-up mt-10 max-w-xl text-lg leading-relaxed text-muted md:text-xl text-pretty" style={{ ["--delay" as string]: "160ms" }}>
           {lead}
         </p>
         {children && (
-          <div className="mt-10 flex flex-wrap gap-3 fade-up" style={{ ["--delay" as string]: "240ms" }}>
+          <div className="fade-up mt-10 flex flex-wrap gap-3" style={{ ["--delay" as string]: "240ms" }}>
             {children}
           </div>
         )}
       </div>
     </section>
+  );
+}
+
+export function ArrowLink({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
+  return (
+    <Link href={href} className={cn("group inline-flex items-center gap-1.5 text-sm font-medium", className)}>
+      {children}
+      <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
+    </Link>
   );
 }

@@ -27,7 +27,7 @@ export default async function DivisionPage({ params }: Props) {
 
   return (
     <>
-      <PageHero eyebrow={`Division ${d.index} · ${d.kicker}`} title={d.name} lead={d.summary}>
+      <PageHero image={d.image} eyebrow={`Division ${d.index} · ${d.kicker}`} title={d.name} lead={d.summary}>
         <ButtonLink href={`/contact?topic=${encodeURIComponent(d.slug === "intelligence" ? "AI solution" : "Custom software")}`} arrow>
           Talk to this team
         </ButtonLink>
@@ -38,8 +38,8 @@ export default async function DivisionPage({ params }: Props) {
 
       <Section tone="light">
         <div className="container-x grid gap-12 lg:grid-cols-2">
-          <div data-reveal className="card-glow p-8 md:p-10">
-            <span className="flex size-11 items-center justify-center rounded-2xl border border-line bg-bg">
+          <div data-reveal className="border border-line bg-card p-8 md:p-10">
+            <span className="flex size-11 items-center justify-center border border-line bg-bg">
               <DivisionIcon name={d.icon} />
             </span>
             <p className="eyebrow mt-10">What we deliver</p>
@@ -51,8 +51,9 @@ export default async function DivisionPage({ params }: Props) {
               ))}
             </ul>
           </div>
-          <div data-reveal style={{ ["--delay" as string]: "100ms" }} className="tone-dark relative overflow-hidden rounded-3xl p-8 md:p-10">
-            <div className="horizon-glow pointer-events-none absolute inset-x-0 bottom-0 h-2/3" aria-hidden />
+          <div data-reveal style={{ ["--delay" as string]: "100ms" }} className="image-card tone-dark p-8 md:p-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={d.image} alt="" loading="lazy" decoding="async" className="opacity-60" />
             <div className="relative">
               <p className="eyebrow">The client outcome</p>
               <ul className="mt-6 space-y-6">
@@ -73,7 +74,7 @@ export default async function DivisionPage({ params }: Props) {
         </div>
       </Section>
 
-      <Section tone="light" className="!pt-0">
+      <Section tone="dark">
         <div className="container-x">
           <SectionHeader eyebrow="How we deliver" title="One method, every division." />
           <ProcessSteps />

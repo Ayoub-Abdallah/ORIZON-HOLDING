@@ -82,7 +82,7 @@ export function BriefBuilder() {
   }
 
   return (
-    <div className="rounded-3xl border border-line bg-bg p-6 shadow-[0_30px_80px_-40px_rgb(0_0_0/0.25)] md:p-10">
+    <div className="border border-line bg-bg p-6 md:p-10">
       <ol className="flex items-center gap-2" aria-label="Progress">
         {steps.map((label, i) => (
           <li key={label} className="flex flex-1 flex-col gap-2">
@@ -145,11 +145,10 @@ export function BriefBuilder() {
 
         {step === 3 && (
           <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] fade-up">
-            <div className="tone-dark relative overflow-hidden rounded-2xl p-7">
-              <div className="horizon-glow pointer-events-none absolute inset-x-0 bottom-0 h-2/3 opacity-70" aria-hidden />
+            <div className="tone-dark relative overflow-hidden p-7">
               <div className="relative">
                 <p className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
-                  <Sparkles className="size-3.5 text-accent-soft" /> Recommended
+                  <Sparkles className="size-3.5 text-muted" /> Recommended
                 </p>
                 <p className="display mt-4 text-4xl">{result.offer}</p>
                 <dl className="mt-8 space-y-4 text-sm">
@@ -250,7 +249,7 @@ function Choice({ active, onClick, children }: { active: boolean; onClick: () =>
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "flex items-center justify-between rounded-2xl border px-5 py-4 text-left text-[15px] transition-all",
+        "flex items-center justify-between border px-5 py-4 text-left text-[15px] transition-all",
         active ? "border-accent bg-accent/[0.07] shadow-[0_0_0_3px_rgb(91_140_255/0.15)]" : "border-line hover:border-fg/25 hover:bg-card",
       )}
     >
