@@ -92,7 +92,7 @@ export function CommandMenu() {
               }
             }}
             placeholder="Search pages, solutions, actions…"
-            className="h-14 flex-1 bg-transparent text-[15px] outline-none placeholder:text-faint"
+            className="h-14 flex-1 bg-transparent text-base outline-none sm:text-[15px] placeholder:text-faint"
           />
           <kbd className="rounded border border-white/10 px-1.5 py-0.5 text-[10px] text-muted">ESC</kbd>
         </div>

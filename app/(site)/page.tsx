@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fingerprint, Languages, ServerCog, Zap } from "lucide-react";
+import { Fingerprint, Quote, ServerCog, Zap } from "lucide-react";
 import { aiSolutions, edges, site } from "@/lib/content";
 import { ButtonLink, Pill, Section, SectionHeader } from "@/components/ui";
 import { Hero } from "@/components/home/hero";
@@ -63,7 +63,7 @@ export default function Home() {
               <ul className="mt-10 grid gap-6 sm:grid-cols-2">
                 {[
                   [ServerCog, "On-prem & sovereign", "Runs where your data must stay."],
-                  [Languages, "Arabic · French · English", "Multilingual, dialect-aware."],
+                  [Quote, "Cited answers", "Every answer links to its source."],
                   [Fingerprint, "Permission-aware", "Answers respect who is asking."],
                   [Zap, "Weeks, not years", "A working pilot in 2–4 weeks."],
                 ].map(([Icon, t, d]) => {

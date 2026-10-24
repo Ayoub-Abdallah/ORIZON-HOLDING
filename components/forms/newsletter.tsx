@@ -29,7 +29,7 @@ export function Newsletter() {
           required
           placeholder="you@company.com"
           autoComplete="email"
-          className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-faint"
+          className="min-w-0 flex-1 bg-transparent text-base outline-none sm:text-sm placeholder:text-faint"
         />
         <button
           type="submit"

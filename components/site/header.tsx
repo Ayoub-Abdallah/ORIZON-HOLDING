@@ -90,6 +90,7 @@ export function Header() {
         </div>
       </nav>
 
+      {open && <div className="fixed inset-0 -z-10 bg-black/80 backdrop-blur-md md:hidden" onClick={() => setOpen(false)} aria-hidden />}
       {open && (
         <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-black/90 p-3 backdrop-blur-xl md:hidden">
           <ul className="flex flex-col">

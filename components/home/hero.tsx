@@ -7,7 +7,7 @@ const words = ["think", "design", "build", "deploy", "scale"];
 
 const stats = [
   { value: "7", label: "integrated divisions" },
-  { value: "AR · FR · EN", label: "multilingual by default" },
+  { value: "2–4 wks", label: "to a working AI pilot" },
   { value: "24/7", label: "follow-the-sun delivery" },
 ];
 
