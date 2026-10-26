@@ -5,11 +5,6 @@ import { ButtonLink } from "@/components/ui";
 
 const words = ["think", "design", "build", "deploy", "scale"];
 
-const stats = [
-  { value: "7", label: "integrated divisions" },
-  { value: "2–4 wks", label: "to a working AI pilot" },
-  { value: "24/7", label: "follow-the-sun delivery" },
-];
 
 /** Letters fade in from a blur, one after another. Pure CSS per letter. */
 function BlurWord({ word }: { word: string }) {
@@ -103,16 +98,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-x relative z-10 pb-12">
-        <dl className="fade-up flex flex-wrap gap-x-14 gap-y-6" style={{ ["--delay" as string]: "400ms" }}>
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col gap-1.5">
-              <dd className="text-3xl text-white lg:text-4xl">{s.value}</dd>
-              <dt className="text-xs text-white/50">{s.label}</dt>
-            </div>
-          ))}
-        </dl>
-      </div>
     </section>
   );
 }

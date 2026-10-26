@@ -1,6 +1,7 @@
 import "server-only";
 import { promises as fs } from "fs";
 import path from "path";
+import { env } from "./env";
 
 // Tiny document store with two drivers:
 //  - Upstash Redis (REST) when UPSTASH_REDIS_REST_URL / _TOKEN are set — use this in production.
@@ -79,7 +80,8 @@ function fileDriver(dir: string): Driver {
 }
 
 function createDriver(): Driver {
-  const { UPSTASH_REDIS_REST_URL: url, UPSTASH_REDIS_REST_TOKEN: token } = process.env;
+  const url = env("UPSTASH_REDIS_REST_URL");
+  const token = env("UPSTASH_REDIS_REST_TOKEN");
   if (url && token) return upstashDriver(url, token);
   const dir = process.env.DATA_DIR ?? (process.env.VERCEL ? "/tmp/orizon-data" : path.join(process.cwd(), ".data"));
   return fileDriver(dir);
