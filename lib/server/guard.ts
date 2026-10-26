@@ -1,6 +1,7 @@
 import "server-only";
 import { createHmac, timingSafeEqual } from "crypto";
 import { cookies, headers } from "next/headers";
+import { env } from "./env";
 
 // ---- Rate limiting (best-effort, per instance) ----
 
@@ -23,7 +24,7 @@ const COOKIE = "orizon_admin";
 const MAX_AGE = 60 * 60 * 12;
 
 function secret() {
-  return process.env.ADMIN_SECRET ?? process.env.ADMIN_PASSWORD ?? "";
+  return env("ADMIN_SECRET") ?? env("ADMIN_PASSWORD") ?? "";
 }
 
 function sign(value: string) {
@@ -31,11 +32,11 @@ function sign(value: string) {
 }
 
 export function adminEnabled() {
-  return Boolean(process.env.ADMIN_PASSWORD);
+  return Boolean(env("ADMIN_PASSWORD"));
 }
 
 export function checkPassword(input: string) {
-  const expected = process.env.ADMIN_PASSWORD;
+  const expected = env("ADMIN_PASSWORD");
   if (!expected) return false;
   const a = Buffer.from(sign(input));
   const b = Buffer.from(sign(expected));
